@@ -14,11 +14,9 @@
   <!-- Encabezado con navegación -->
   <header class="bg-gradient-to-r from-blue-800 to-blue-500 shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <!-- Título del sitio -->
       <h1 class="text-3xl font-bold tracking-wide">
         Spira<span class="text-yellow-300">Quest</span>
       </h1>
-      <!-- Menú de navegación -->
       <nav>
         <ul class="flex gap-6 text-lg">
           <li><a href="#inicio" class="hover:text-yellow-300 transition">Inicio</a></li>
@@ -31,12 +29,7 @@
 
   <!-- Sección principal (Hero) con imagen de Zanarkand como fondo -->
   <section id="inicio" class="relative h-[90vh] flex items-center justify-center text-center bg-black">
-    <!-- Imagen de fondo -->
-    <img src="images/zanarkand-bg.jpg" 
-         alt="Zanarkand Background" 
-         class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
-
-    <!-- Capa de contenido -->
+    <img src="images/zanarkand-bg.avif" alt="Zanarkand Background" class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
     <div class="relative z-10 bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">Final Fantasy X</h2>
       <p class="text-lg md:text-xl italic mb-6">"Hear my story... This may be our last chance." — Tidus</p>
@@ -47,12 +40,18 @@
     </div>
   </section>
 
-  <!-- Sección del quiz -->
+  <!-- Sección del quiz con diseño tipo "testimonial block" -->
   <section id="quiz" class="bg-gray-900 py-16 px-6 text-white">
-    <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h2 class="text-3xl font-bold text-center text-yellow-300 mb-6">Quiz: ¿Cuánto sabes sobre Final Fantasy X?</h2>
-      <!-- Aquí se renderiza dinámicamente el contenido del quiz -->
-      <div id="quiz-container"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold text-yellow-300 sm:text-4xl">Quiz: ¿Cuánto sabes sobre Final Fantasy X?</h2>
+        <p class="mt-2 text-lg leading-8 text-gray-400">Pon a prueba tus conocimientos sobre Spira, sus personajes y su historia.</p>
+      </div>
+      <div class="mt-10 flow-root">
+        <div id="quiz-container" class="mx-auto max-w-xl divide-y divide-gray-700 overflow-hidden rounded-xl bg-gray-800 shadow-md">
+          <!-- Preguntas se insertan aquí dinámicamente con JS -->
+        </div>
+      </div>
     </div>
   </section>
 
@@ -64,7 +63,6 @@
         Spira es el mundo ficticio donde se desarrolla Final Fantasy X. Es un lugar de belleza y tragedia,
         donde la fe, la tecnología y los lazos entre personajes se entrelazan en una historia inolvidable.
       </p>
-      <!-- Galería de imágenes del universo FFX -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <img src="images/ffx-remaster.jpg" alt="Logo FFX" class="rounded-lg shadow">
         <img src="images/tidus.jpg" alt="Tidus" class="rounded-lg shadow">
