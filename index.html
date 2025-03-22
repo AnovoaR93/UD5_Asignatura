@@ -1,79 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spira Quest - Final Fantasy X Quiz</title>
-  <!-- TailwindCSS para estilos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spira Quest - Inicio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome (íconos opcionales, requiere reemplazo de kit si se usa) -->
-  <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-  <!-- Encabezado con navegación -->
-  <header class="bg-gradient-to-r from-blue-800 to-blue-500 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-3xl font-bold tracking-wide">
-        Spira<span class="text-yellow-300">Quest</span>
-      </h1>
-      <nav>
-        <ul class="flex gap-6 text-lg">
-          <li><a href="#inicio" class="hover:text-yellow-300 transition">Inicio</a></li>
-          <li><a href="#quiz" class="hover:text-yellow-300 transition">Quiz</a></li>
-          <li><a href="#about" class="hover:text-yellow-300 transition">Sobre Spira</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Sección principal (Hero) con imagen de Zanarkand como fondo -->
-  <section id="inicio" class="relative h-[90vh] flex items-center justify-center text-center bg-black">
-    <img src="images/zanarkand-bg.jpg" alt="Zanarkand Background" class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
+  <!-- Hero con imagen de fondo y bienvenida -->
+  <section class="relative h-screen flex items-center justify-center text-center bg-black">
+    <!-- Imagen de fondo de Zanarkand -->
+    <img src="images/zanarkand-bg.jpg" alt="Zanarkand Background"
+         class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
+    
+    <!-- Capa oscura encima de la imagen con texto y botones -->
     <div class="relative z-10 bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">Final Fantasy X</h2>
-      <p class="text-lg md:text-xl italic mb-6">"Hear my story... This may be our last chance." — Tidus</p>
-      <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="#quiz" class="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 transition">Empezar Quiz</a>
-        <a href="#about" class="border border-yellow-300 text-yellow-300 px-6 py-3 rounded-md hover:bg-yellow-300 hover:text-gray-900 transition">Sobre Spira</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección del quiz con diseño tipo "testimonial block" -->
-  <section id="quiz" class="bg-gray-900 py-16 px-6 text-white">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold text-yellow-300 sm:text-4xl">Quiz: ¿Cuánto sabes sobre Final Fantasy X?</h2>
-        <p class="mt-2 text-lg leading-8 text-gray-400">Pon a prueba tus conocimientos sobre Spira, sus personajes y su historia.</p>
-      </div>
-      <div class="mt-10 flow-root">
-        <div id="quiz-container" class="mx-auto max-w-xl divide-y divide-gray-700 overflow-hidden rounded-xl bg-gray-800 shadow-md">
-          <!-- Preguntas se insertan aquí dinámicamente con JS -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección informativa sobre Spira -->
-  <section id="about" class="bg-gray-800 py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Sobre Spira</h3>
-      <p class="text-gray-300 mb-6">
-        Spira es el mundo ficticio donde se desarrolla Final Fantasy X. Es un lugar de belleza y tragedia,
-        donde la fe, la tecnología y los lazos entre personajes se entrelazan en una historia inolvidable.
+      <p class="text-lg md:text-xl italic mb-6">
+        "Hear my story... This may be our last chance." — Tidus
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="images/ffx-remaster.jpg" alt="Logo FFX" class="rounded-lg shadow">
-        <img src="images/tidus.jpg" alt="Tidus" class="rounded-lg shadow">
-        <img src="images/yuna-x25.jpg" alt="Yuna FFX-2.5" class="rounded-lg shadow">
-        <img src="images/tidus-yuna.jpg" alt="Tidus y Yuna" class="rounded-lg shadow">
-        <img src="images/grupo-ffx.jpg" alt="Equipo completo FFX" class="rounded-lg shadow col-span-1 md:col-span-2">
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <!-- Enlace al quiz (página separada) -->
+        <a href="quiz.html"
+           class="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 transition">
+           Ir al Quiz
+        </a>
+        <!-- Ancla a la sección de información -->
+        <a href="#about"
+           class="border border-yellow-300 text-yellow-300 px-6 py-3 rounded-md hover:bg-yellow-300 hover:text-gray-900 transition">
+           Sobre Spira
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Enlace al archivo JavaScript -->
-  <script src="main.js"></script>
+  <!-- Sección de información sobre Spira -->
+  <section id="about" class="bg-gray-800 py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Sobre Spira</h3>
+      <p class="text-gray-300">
+        Spira es el mundo ficticio donde se desarrolla Final Fantasy X, lleno de historia, fe y magia.
+      </p>
+    </div>
+  </section>
+
 </body>
 </html>
+

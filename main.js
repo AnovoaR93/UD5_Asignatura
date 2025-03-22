@@ -1,3 +1,4 @@
+// Array de preguntas con opciones y respuestas
 const questions = [
     {
       question: "¿Cómo se llama el mundo en el que se desarrolla Final Fantasy X?",
@@ -51,12 +52,14 @@ const questions = [
     }
   ];
   
-  let currentQuestion = 0;
-  let score = 0;
+  let currentQuestion = 0; // Índice actual de la pregunta
+  let score = 0;           // Contador de puntuación
   
+  // Espera a que el DOM esté listo antes de ejecutar el quiz
   window.addEventListener('DOMContentLoaded', () => {
     const quizContainer = document.getElementById("quiz-container");
   
+    // Muestra una pregunta y sus opciones
     function showQuestion() {
       const q = questions[currentQuestion];
       quizContainer.innerHTML = `
@@ -72,6 +75,7 @@ const questions = [
       `;
     }
   
+    // Valida la respuesta seleccionada y avanza a la siguiente
     window.selectAnswer = function(selected) {
       if (selected === questions[currentQuestion].answer) {
         score++;
@@ -82,8 +86,9 @@ const questions = [
       } else {
         showResult();
       }
-    };
+    }
   
+    // Muestra el resultado final y el nivel de fan
     function showResult() {
       let fanLevel = "";
       if (score <= 3) fanLevel = "Principiante de Spira 🌀";
@@ -102,11 +107,14 @@ const questions = [
       `;
     }
   
+    // Reinicia el quiz desde el principio
     window.restartQuiz = function() {
       currentQuestion = 0;
       score = 0;
       showQuestion();
-    };
+    }
   
+    // Inicia el quiz
     showQuestion();
   });
+  
