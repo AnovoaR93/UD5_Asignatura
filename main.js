@@ -1,4 +1,4 @@
-// Array de preguntas con opciones y respuestas
+// Array de preguntas del quiz
 const questions = [
     {
       question: "¿Cómo se llama el mundo en el que se desarrolla Final Fantasy X?",
@@ -52,22 +52,46 @@ const questions = [
     }
   ];
   
-  let currentQuestion = 0; // Índice actual de la pregunta
-  let score = 0;           // Contador de puntuación
+  // Array de imágenes para los fondos de cada pregunta (en el mismo orden que las preguntas)
+  const backgrounds = [
+    "images/ffx-hero.jpg",
+    "images/ffx-remaster.jpg",
+    "images/grupo-ffx.jpg",
+    "images/tidus-yuna.jpg",
+    "images/tidus.jpg",
+    "images/yuna-x25.jpg",
+    "images/zanarkand-bg.jpg",
+    "images/grupo-ffx.jpg",
+    "images/tidus-yuna.jpg",
+    "images/ffx-remaster.jpg"
+  ];
   
-  // Espera a que el DOM esté listo antes de ejecutar el quiz
+  let currentQuestion = 0; // Índice de la pregunta actual
+  let score = 0;            // Puntaje del usuario
+  
+  // Esperar que el documento esté completamente cargado
   window.addEventListener('DOMContentLoaded', () => {
     const quizContainer = document.getElementById("quiz-container");
   
-    // Muestra una pregunta y sus opciones
+    // Mostrar la pregunta actual en pantalla
     function showQuestion() {
       const q = questions[currentQuestion];
+  
+      // Establecer el fondo correspondiente a la pregunta
+      document.body.style.backgroundImage = `url('${backgrounds[currentQuestion]}')`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+  
+      // Mostrar pregunta y opciones con estilos adaptados
       quizContainer.innerHTML = `
-        <div class="mb-4 text-lg text-yellow-300">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
-        <h3 class="text-2xl font-semibold mb-6">${q.question}</h3>
+        <div class="mb-4 text-lg text-yellow-300 bg-black bg-opacity-60 p-2 rounded">
+          Pregunta ${currentQuestion + 1} de ${questions.length}
+        </div>
+        <h3 class="text-2xl font-semibold mb-6 bg-black bg-opacity-60 p-3 rounded">${q.question}</h3>
         <div class="space-y-4">
           ${q.options.map((option, index) => `
-            <button onclick="selectAnswer(${index})" class="w-full text-left px-6 py-3 bg-gray-700 rounded-lg hover:bg-blue-600 transition">
+            <button onclick="selectAnswer(${index})" class="w-full text-left px-6 py-3 bg-gray-700 bg-opacity-80 rounded-lg hover:bg-blue-600 transition">
               ${option}
             </button>
           `).join('')}
@@ -75,12 +99,12 @@ const questions = [
       `;
     }
   
-    // Valida la respuesta seleccionada y avanza a la siguiente
+    // Función llamada cuando el usuario selecciona una respuesta
     window.selectAnswer = function(selected) {
       if (selected === questions[currentQuestion].answer) {
-        score++;
+        score++; // Aumentar puntaje si la respuesta es correcta
       }
-      currentQuestion++;
+      currentQuestion++; // Ir a la siguiente pregunta
       if (currentQuestion < questions.length) {
         showQuestion();
       } else {
@@ -88,7 +112,7 @@ const questions = [
       }
     }
   
-    // Muestra el resultado final y el nivel de fan
+    // Mostrar la pantalla de resultado al finalizar el quiz
     function showResult() {
       let fanLevel = "";
       if (score <= 3) fanLevel = "Principiante de Spira 🌀";
@@ -96,7 +120,7 @@ const questions = [
       else fanLevel = "Alto invocador 🔥";
   
       quizContainer.innerHTML = `
-        <div class="text-center">
+        <div class="text-center bg-black bg-opacity-60 p-6 rounded">
           <h3 class="text-3xl font-bold text-green-400 mb-4">¡Has terminado tu peregrinaje!</h3>
           <p class="text-xl">Puntos obtenidos: <span class="font-bold">${score}</span> de ${questions.length}</p>
           <p class="text-lg mt-2 text-yellow-300">Nivel de fan: <strong>${fanLevel}</strong></p>
@@ -107,14 +131,13 @@ const questions = [
       `;
     }
   
-    // Reinicia el quiz desde el principio
+    // Reiniciar el quiz desde la primera pregunta
     window.restartQuiz = function() {
       currentQuestion = 0;
       score = 0;
       showQuestion();
     }
   
-    // Inicia el quiz
+    // Iniciar el quiz al cargar la página
     showQuestion();
   });
-  
