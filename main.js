@@ -1,5 +1,4 @@
 const questions = [
-    // Cada objeto representa una pregunta del quiz con sus opciones y la respuesta correcta
     {
       question: "¿Cómo se llama el mundo en el que se desarrolla Final Fantasy X?",
       options: ["Gaia", "Ivalice", "Spira", "Midgar"],
@@ -52,60 +51,62 @@ const questions = [
     }
   ];
   
-  let currentQuestion = 0; // Índice de la pregunta actual
-  let score = 0; // Puntuación del jugador
+  let currentQuestion = 0;
+  let score = 0;
   
-  const quizContainer = document.getElementById("quiz-container"); // Contenedor donde se mostrará el quiz
+  window.addEventListener('DOMContentLoaded', () => {
+    const quizContainer = document.getElementById("quiz-container");
   
-  // Muestra la pregunta actual y las opciones
-  function showQuestion() {
-    const q = questions[currentQuestion];
-    quizContainer.innerHTML = `
-      <div class="mb-4 text-lg text-yellow-300">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
-      <h3 class="text-2xl font-semibold mb-6">${q.question}</h3>
-      <div class="space-y-4">
-        ${q.options.map((option, index) => `
-          <button onclick="selectAnswer(${index})" class="w-full text-left px-6 py-3 bg-gray-700 rounded-lg hover:bg-blue-600 transition">
-            ${option}
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      quizContainer.innerHTML = `
+        <div class="mb-4 text-lg text-yellow-300">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
+        <h3 class="text-2xl font-semibold mb-6">${q.question}</h3>
+        <div class="space-y-4">
+          ${q.options.map((option, index) => `
+            <button onclick="selectAnswer(${index})" class="w-full text-left px-6 py-3 bg-gray-700 rounded-lg hover:bg-blue-600 transition">
+              ${option}
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+  
+    window.selectAnswer = function(selected) {
+      if (selected === questions[currentQuestion].answer) {
+        score++;
+      }
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    };
+  
+    function showResult() {
+      let fanLevel = "";
+      if (score <= 3) fanLevel = "Principiante de Spira 🌀";
+      else if (score <= 7) fanLevel = "Guardián en entrenamiento 🛡️";
+      else fanLevel = "Alto invocador 🔥";
+  
+      quizContainer.innerHTML = `
+        <div class="text-center">
+          <h3 class="text-3xl font-bold text-green-400 mb-4">¡Has terminado tu peregrinaje!</h3>
+          <p class="text-xl">Puntos obtenidos: <span class="font-bold">${score}</span> de ${questions.length}</p>
+          <p class="text-lg mt-2 text-yellow-300">Nivel de fan: <strong>${fanLevel}</strong></p>
+          <button onclick="restartQuiz()" class="mt-6 px-6 py-3 bg-yellow-300 text-gray-900 font-semibold rounded hover:bg-yellow-400 transition">
+            Volver a intentarlo
           </button>
-        `).join('')}
-      </div>
-    `;
-  }
-  
-  // Valida si la respuesta seleccionada es correcta y avanza a la siguiente pregunta o muestra el resultado final
-  function selectAnswer(selected) {
-    if (selected === questions[currentQuestion].answer) {
-      score++; // Aumenta la puntuación si es correcta
+        </div>
+      `;
     }
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-      showQuestion(); // Muestra la siguiente pregunta
-    } else {
-      showResult(); // Muestra el resultado final
-    }
-  }
   
-  // Muestra la puntuación final del jugador
-  function showResult() {
-    quizContainer.innerHTML = `
-      <div class="text-center">
-        <h3 class="text-3xl font-bold text-green-400 mb-4">¡Has terminado tu peregrinaje!</h3>
-        <p class="text-xl">Puntos obtenidos: <span class="font-bold">${score}</span> de ${questions.length}</p>
-        <p class="italic mt-2 text-sm text-gray-400">¿Eres digno de enfrentarte a Sin?</p>
-        <button onclick="restartQuiz()" class="mt-6 px-6 py-3 bg-yellow-300 text-gray-900 font-semibold rounded hover:bg-yellow-400 transition">
-          Volver a intentarlo
-        </button>
-      </div>
-    `;
-  }
+    window.restartQuiz = function() {
+      currentQuestion = 0;
+      score = 0;
+      showQuestion();
+    };
   
-  // Reinicia el quiz desde el principio
-  function restartQuiz() {
-    currentQuestion = 0;
-    score = 0;
     showQuestion();
-  }
-  
-  // Inicializa el quiz al cargar la página
-  showQuestion();
+  });
