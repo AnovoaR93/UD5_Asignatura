@@ -3,27 +3,52 @@ const questions = [
     {
       question: "¿Cómo se llama el mundo en el que se desarrolla Final Fantasy X?",
       options: ["Gaia", "Ivalice", "Spira", "Midgar"],
-      answer: 2 // Spira es la respuesta correcta
+      answer: 2
     },
     {
       question: "¿Quién es la invocadora principal del grupo?",
       options: ["Rikku", "Lulu", "Yuna", "Paine"],
-      answer: 2 // Yuna es la invocadora
+      answer: 2
     },
     {
       question: "¿Cuál es el nombre del monstruo gigante que amenaza Spira?",
       options: ["Bahamut", "Sin", "Ifrit", "Anima"],
-      answer: 1 // Sin es el enemigo principal
+      answer: 1
     },
     {
       question: "¿Cómo se llama la ciudad natal de Tidus?",
       options: ["Bevelle", "Besaid", "Zanarkand", "Kilika"],
-      answer: 2 // Tidus proviene de Zanarkand
+      answer: 2
     },
     {
       question: "¿Qué arma usa Wakka en combate?",
       options: ["Espada", "Lanza", "Pelota", "Daga"],
-      answer: 2 // Wakka usa una pelota de blitzball
+      answer: 2
+    },
+    {
+      question: "¿Qué función tiene Auron dentro del grupo?",
+      options: ["Invocador", "Guardián", "Navegante", "Mercader"],
+      answer: 1
+    },
+    {
+      question: "¿Cómo se llama el padre de Yuna?",
+      options: ["Braska", "Jecht", "Kinoc", "Isaaru"],
+      answer: 0
+    },
+    {
+      question: "¿Qué criatura mitológica puedes invocar en el juego?",
+      options: ["Phoenix", "Bahamut", "Shiva", "Todas las anteriores"],
+      answer: 3
+    },
+    {
+      question: "¿Qué relación tiene Tidus con Jecht?",
+      options: ["Hermanos", "Enemigos", "Padre e hijo", "Maestros"],
+      answer: 2
+    },
+    {
+      question: "¿Qué tipo de deporte aparece en Final Fantasy X?",
+      options: ["Chocobo Racing", "Triple Triad", "Blitzball", "Sphere Break"],
+      answer: 2
     }
   ];
   
