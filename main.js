@@ -24,6 +24,31 @@ const questions = [
       question: "¿Qué arma usa Wakka en combate?",
       options: ["Espada", "Lanza", "Pelota", "Daga"],
       answer: 2
+    },
+    {
+      question: "¿Cuál es el nombre del padre de Tidus?",
+      options: ["Auron", "Jecht", "Braska", "Kimahri"],
+      answer: 1
+    },
+    {
+      question: "¿Qué criatura puede invocar Yuna como eón final?",
+      options: ["Bahamut", "Anima", "Magus Sisters", "The Final Aeon"],
+      answer: 3
+    },
+    {
+      question: "¿Qué organización domina la religión en Spira?",
+      options: ["Avalancha", "Yevon", "SeeD", "Shinra"],
+      answer: 1
+    },
+    {
+      question: "¿Quién es el guardián que acompaña a Yuna y es también su padre espiritual?",
+      options: ["Wakka", "Lulu", "Auron", "Kimahri"],
+      answer: 2
+    },
+    {
+      question: "¿Cuál es el nombre del grupo musical ficticio del ending de FFX-2?",
+      options: ["Gullwings", "YRP", "Spirans", "Dreamers"],
+      answer: 1
     }
   ];
   
@@ -79,8 +104,8 @@ const questions = [
   
     // Determinar el nivel de fan según el puntaje
     function getFanLevel(score) {
-      if (score <= 2) return "🌱 Principiante de Spira";
-      if (score <= 4) return "🛡️ Guardián en entrenamiento";
+      if (score <= 3) return "🌱 Principiante de Spira";
+      if (score <= 7) return "🛡️ Guardián en entrenamiento";
       return "🔥 Alto invocador de Yevon";
     }
   
@@ -94,3 +119,4 @@ const questions = [
     // Mostrar la primera pregunta al iniciar
     showQuestion();
   });
+  
