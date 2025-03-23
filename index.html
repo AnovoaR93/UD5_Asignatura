@@ -3,124 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spira Quest - Inicio</title>
+  <title>Spira Quest - Final Fantasy X</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-950 text-white font-sans">
 
-  <!-- Hero con imagen de fondo y bienvenida -->
-  <section class="relative h-screen flex items-center justify-center text-center bg-black">
-    <!-- Imagen de fondo de Zanarkand -->
-    <img src="images/zanarkand-bg.jpg" alt="Zanarkand Background"
-         class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
-    
-    <!-- Capa oscura encima de la imagen con texto y botones -->
-    <div class="relative z-10 bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">Final Fantasy X</h2>
-      <p class="text-lg md:text-xl italic mb-6">
-        "Hear my story... This may be our last chance." — Tidus
-      </p>
+  <!-- Hero con fondo de Zanarkand -->
+  <section class="relative h-screen flex items-center justify-center text-center">
+    <img src="images/zanarkand-bg.jpg" alt="Zanarkand Background" class="absolute inset-0 w-full h-full object-cover opacity-60 z-0" />
+
+    <div class="relative z-10 bg-black bg-opacity-60 p-8 rounded-xl max-w-2xl">
+      <h1 class="text-5xl font-extrabold text-yellow-300 mb-4">🌟 Spira Quest</h1>
+      <p class="text-xl italic mb-6">"Hear my story... This may be our last chance." — Tidus</p>
       <div class="flex flex-col md:flex-row justify-center gap-4">
-        <!-- Enlace al quiz -->
-        <a href="quiz.html"
-           class="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 transition">
-           Ir al Quiz
-        </a>
-        <!-- Enlace a sección inferior -->
-        <a href="#about"
-           class="border border-yellow-300 text-yellow-300 px-6 py-3 rounded-md hover:bg-yellow-300 hover:text-gray-900 transition">
-           Sobre Spira
-        </a>
+        <a href="quiz.html" class="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 transition">🎮 Jugar al Quiz</a>
+        <a href="#about" class="border border-yellow-300 text-yellow-300 px-6 py-3 rounded-md hover:bg-yellow-300 hover:text-gray-900 transition">📘 Sobre Spira</a>
       </div>
     </div>
   </section>
 
-  <!-- Sección: Unidades del Viaje en Spira -->
-  <section id="temas-ffx" class="bg-gray-800 text-white py-16 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-yellow-300 mb-8 text-center">Unidades del Viaje en Spira</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Tema 1 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold text-yellow-200">Zanarkand y el origen de Tidus</h3>
-          <p class="text-gray-300 mb-2">
-            Una ciudad avanzada destruida por Sin. Aquí comienza la historia de Tidus, protagonista del juego.
-          </p>
-          <a href="https://finalfantasy.fandom.com/es/wiki/Zanarkand" target="_blank" class="text-blue-400 underline text-sm">
-            Leer más sobre Zanarkand
-          </a>
+  <!-- Sección de Temas (Fan-site) -->
+  <section id="temas-ffx" class="bg-gradient-to-b from-gray-900 to-black py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-yellow-300 mb-10 text-center">🌍 Etapas de tu Viaje por Spira</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="bg-white/5 backdrop-blur-sm border border-yellow-500/30 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-2xl font-bold text-yellow-200 mb-2">📍 Zanarkand: Ciudad de los Sueños</h3>
+          <p class="text-gray-300 mb-4">El lugar donde comienza todo. Una metrópolis brillante que solo existe en los recuerdos de Tidus.</p>
+          <a href="https://finalfantasy.fandom.com/es/wiki/Zanarkand" target="_blank" class="text-blue-400 hover:underline text-sm">🧭 Descubre más</a>
         </div>
 
-        <!-- Tema 2 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold text-yellow-200">Los invocadores y su peregrinaje</h3>
-          <p class="text-gray-300 mb-2">
-            Los invocadores, como Yuna, viajan por Spira para obtener eones y derrotar a Sin mediante el sacrificio.
-          </p>
-          <a href="https://finalfantasy.fandom.com/es/wiki/Invocador_(FFX)" target="_blank" class="text-blue-400 underline text-sm">
-            Leer más sobre los invocadores
-          </a>
+        <div class="bg-white/5 backdrop-blur-sm border border-yellow-500/30 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-2xl font-bold text-yellow-200 mb-2">🧙‍♀️ Invocadores: El Camino del Sacrificio</h3>
+          <p class="text-gray-300 mb-4">Invocadoras como Yuna viajan templos sagrados para obtener eones y enfrentarse a Sinh.</p>
+          <a href="https://finalfantasy.fandom.com/es/wiki/Invocador_(FFX)" target="_blank" class="text-blue-400 hover:underline text-sm">🔮 Ver más</a>
         </div>
 
-        <!-- Tema 3 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold text-yellow-200">Sin: el ciclo de destrucción</h3>
-          <p class="text-gray-300 mb-2">
-            Sin es una criatura colosal que arrasa Spira cada cierto tiempo. Representa el castigo eterno según Yevon.
-          </p>
-          <a href="https://finalfantasy.fandom.com/es/wiki/Sinh" target="_blank" class="text-blue-400 underline text-sm">
-            Leer más sobre Sin
-          </a>
+        <div class="bg-white/5 backdrop-blur-sm border border-yellow-500/30 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-2xl font-bold text-yellow-200 mb-2">💀 Sinh: El Círculo del Dolor</h3>
+          <p class="text-gray-300 mb-4">Una criatura ancestral que arrasa con todo. Nadie en Spira está a salvo mientras exista.</p>
+          <a href="https://finalfantasy.fandom.com/es/wiki/Sinh" target="_blank" class="text-blue-400 hover:underline text-sm">⚔️ Ver bestiario</a>
         </div>
 
-        <!-- Tema 4 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold text-yellow-200">El Blitzball: deporte y tradición</h3>
-          <p class="text-gray-300 mb-2">
-            El Blitzball es el deporte más popular en Spira. Tidus y Wakka son jugadores reconocidos.
-          </p>
-          <a href="https://finalfantasy.fandom.com/es/wiki/Blitzbol" target="_blank" class="text-blue-400 underline text-sm">
-            Leer más sobre el Blitzball
-          </a>
+        <div class="bg-white/5 backdrop-blur-sm border border-yellow-500/30 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-2xl font-bold text-yellow-200 mb-2">⚽ Blitzball: Más que un juego</h3>
+          <p class="text-gray-300 mb-4">El deporte estrella de Spira. Tidus y Wakka brillan en la arena como verdaderos campeones.</p>
+          <a href="https://finalfantasy.fandom.com/es/wiki/Blitzbol" target="_blank" class="text-blue-400 hover:underline text-sm">🏆 Ver reglas</a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Sección: Curiosidades -->
-  <section id="curiosidades" class="bg-gray-900 py-16 px-6">
+  <!-- Sección de Curiosidades -->
+  <section id="curiosidades" class="bg-gray-950 py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-3xl font-bold text-yellow-300 mb-8">Curiosidades de Final Fantasy X</h3>
-      
-      <ul class="space-y-6 text-left text-gray-200 list-disc list-inside text-lg">
-        <li>
-          <strong>Primer Final Fantasy con voces:</strong> FFX fue el primer juego de la saga en tener doblaje de voz para los personajes.
-        </li>
-        <li>
-          <strong>El Blitzball es un deporte jugable:</strong> inspirado en el waterpolo y el fútbol, puedes jugar ligas enteras dentro del juego.
-        </li>
-        <li>
-          <strong>Yuna y Tidus:</strong> sus nombres vienen de palabras japonesas relacionadas con la naturaleza: <em>yuuna</em> (flor de hibisco) y <em>tida</em> (sol, en okinawense).
-        </li>
-        <li>
-          <strong>Auron y el sake:</strong> si miras de cerca, Auron lleva una cantimplora que muchos fans creen que contiene sake (licor japonés).
-        </li>
-        <li>
-          <strong>El Camino del Peregrinaje:</strong> está inspirado en la ruta real de Kumano Kodo, un camino espiritual japonés.
-        </li>
+      <h3 class="text-3xl font-bold text-yellow-300 mb-8">✨ Curiosidades de Final Fantasy X</h3>
+      <ul class="space-y-6 text-left text-gray-300 list-disc list-inside text-lg">
+        <li><strong>🎤 Primer Final Fantasy con voces:</strong> FFX fue el primero en tener doblaje de voz.</li>
+        <li><strong>⚽ Blitzball:</strong> Puedes jugar torneos completos. Es como un FIFA acuático mezclado con waterpolo.</li>
+        <li><strong>🌀 Yuna y Tidus:</strong> sus nombres están inspirados en la flor de hibisco y el sol.</li>
+        <li><strong>🍶 Auron:</strong> Su frasco probablemente contiene sake. Samurai legendario y bebedor elegante.</li>
+        <li><strong>🛤️ Camino del Peregrinaje:</strong> inspirado en una ruta real de Japón, Kumano Kodo.</li>
       </ul>
     </div>
   </section>
 
-  <!-- Sección: Sobre Spira -->
+  <!-- Sección Sobre Spira -->
   <section id="about" class="bg-gray-800 py-16 px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Sobre Spira</h3>
-      <p class="text-gray-300">
-        Spira es el mundo ficticio donde se desarrolla Final Fantasy X, lleno de historia, fe y magia.
-        A lo largo del juego, los personajes descubren los secretos de su mundo y el verdadero origen de su sufrimiento.
-      </p>
+      <h3 class="text-3xl font-bold text-yellow-300 mb-4">📘 ¿Qué es Spira?</h3>
+      <p class="text-gray-300 text-lg">Spira es el mágico y trágico mundo donde se desarrolla Final Fantasy X. Un lugar lleno de fe, sacrificio, eones invocados y secretos ocultos tras la religión de Yevon. Tu viaje te llevará por templos, ciudades flotantes y recuerdos olvidados… ¿Estás listo para enfrentarte a Sinh?</p>
     </div>
   </section>
 
